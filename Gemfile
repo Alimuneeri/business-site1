@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
 # Jekyll
-gem "jekyll", "~> 4.3.0"
+# Replace your Jekyll gem line with:
+gem "github-pages", group: :jekyll_plugins
 
 # Plugins
 gem "jekyll-feed", "~> 0.12"
