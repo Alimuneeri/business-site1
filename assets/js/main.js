@@ -45,7 +45,6 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -59,6 +58,42 @@
       e.stopImmediatePropagation();
     });
   });
+
+  /**
+   * Contact form submission handler
+   */
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const loading = this.querySelector('.loading');
+      const errorMessage = this.querySelector('.error-message');
+      const sentMessage = this.querySelector('.sent-message');
+      
+      // Hide all messages first
+      loading.style.display = 'none';
+      errorMessage.style.display = 'none';
+      sentMessage.style.display = 'none';
+      
+      // Show loading
+      loading.style.display = 'block';
+      
+      // Simulate form submission (replace with your actual form handler)
+      setTimeout(() => {
+        loading.style.display = 'none';
+        sentMessage.style.display = 'block';
+        
+        // Reset form
+        this.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          sentMessage.style.display = 'none';
+        }, 5000);
+      }, 1000);
+    });
+  }
 
   /**
    * Preloader
